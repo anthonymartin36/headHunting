@@ -4,7 +4,8 @@ import * as URL from 'node:url'
 import express from 'express'
 import handlebars from 'express-handlebars'
 
-import userRoutes from './routes/users.js'
+import homeRoute from './routes/home.js'
+import invitationRoute from './routes/invitation.js'
 
 const server = express()
 
@@ -18,6 +19,7 @@ server.set('views', Path.join(__dirname, 'views'))
 server.use(express.urlencoded({ extended: true }))
 
 // Routes
-server.use('/', userRoutes)
+server.use('/', homeRoute)
+server.use('/invitation', invitationRoute)
 
 export default server
