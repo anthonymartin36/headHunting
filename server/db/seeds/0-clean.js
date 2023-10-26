@@ -1,3 +1,4 @@
 export async function seed(knex) {
-  await knex('users').del()
+  await knex('a_job').del()
+  await knex('r_job').del()
 }
