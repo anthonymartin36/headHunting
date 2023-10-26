@@ -17,6 +17,6 @@ export async function getAllRoles() {
   return connection('r_job').select()
 }
 
-export async function getJobAssignment(id) {
-  return connection('r_job').select().join('a_job', id, 'a_job.a_id')
+export async function getJobAssignment(r_a_id) {
+  return connection('a_job').select().join('r_job', r_a_id, 'a_job.a_id')
 }
