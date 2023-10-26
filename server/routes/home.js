@@ -5,7 +5,7 @@ import * as db from '../db/db.js'
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-  res.send('home')
+  res.render('home')
 })
 
 export default router
