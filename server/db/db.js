@@ -17,6 +17,12 @@ export async function getAllRoles() {
   return connection('r_job').select()
 }
 
-export async function getJobAssignment(r_a_id) {
-  return connection('a_job').select().join('r_job', r_a_id, 'a_job.a_id')
+export async function getJobAssignment(r_id) {
+  console.log(r_id)
+//where causes an error of type
+
+
+  return connection('a_job')
+    .where('r_id', r_id)
+    .join('r_job', 'r_a_id', 'a_job.a_id')
 }
