@@ -9,11 +9,15 @@ router.get('/:json', async (req, res) => {
   let data = {
     name: 'Anthony',
     selectedRole: 'Role',
+    id: 1,
   }
 
-  let jobAssignment = await db.getJobAssignment()
+  let jobX = await db.getJobAssignment(data.id)
 
-  res.send(data)
+  let viewData = { data, ...jobX[0] }
+
+  console.log(viewData)
+  res.render('invite', viewData)
 })
 
 export default router
