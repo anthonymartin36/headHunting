@@ -1,4 +1,4 @@
-const selectedRole = document.getElementByClassName('selected')[0]
+const selectedRole = document.getElementsByClassName('selected')[0]
 const charactorName = document.getElementById('name').value
 
 const form = document.getElementsByClassName('form')[0]
