@@ -12,9 +12,11 @@ router.get('/:json', async (req, res) => {
   //   id: 1,
   // }
 
-  console.log(data)
+  //console.log(data)
 
-  let jobX = await db.getJobAssignment(data.id)
+  let jobX = await db.getJobAssignmentByRole(data.role)
+
+  console.log(jobX)
 
   let viewData = { data, ...jobX[0] }
 
