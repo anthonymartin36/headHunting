@@ -4,13 +4,15 @@ import * as db from '../db/db.js'
 const router = express.Router()
 
 router.get('/:json', async (req, res) => {
-  // const data = JSON.parse(req.params.json)
+  const data = JSON.parse(req.params.json)
 
-  let data = {
-    name: 'Anthony',
-    selectedRole: 'Role',
-    id: 1,
-  }
+  // let data = {
+  //   name: 'Anthony',
+  //   selectedRole: 'Role',
+  //   id: 1,
+  // }
+
+  console.log(data)
 
   let jobX = await db.getJobAssignment(data.id)
 

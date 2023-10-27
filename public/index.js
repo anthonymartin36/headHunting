@@ -1,4 +1,4 @@
-const selectedRole = document.getElementsByClassName('selected')[0]
+const selectedRole = document.getElementById('select')
 const charactorName = document.getElementById('name').value
 
 const form = document.getElementsByClassName('form')[0]
@@ -6,12 +6,14 @@ form.addEventListener('submit', (event) => {
   event.preventDefault()
   console.log('Form Submitted')
 
-  const headers = new Headers()
+  const body = {
+    name: charactorName,
+    role: selectedRole.options[selectedRole.selectedIndex].innerHTML,
+  }
 
-  const body = { name: charactorName, role: selectedRole }
+  console.log(selectedRole.options[selectedRole.selectedIndex].innerHTML)
 
   const jsonBody = JSON.stringify(body)
-  console.log('Should Fetch')
 
   window.location.href = `invitation/${jsonBody}`
 })
