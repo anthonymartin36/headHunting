@@ -2,7 +2,7 @@ const selectedRole = document.getElementsByClassName('selected')[0]
 const charactorName = document.getElementById('name').value
 
 const form = document.getElementsByClassName('form')[0]
-
+console.log('heheheheheehhe')
 form.addEventListener('submit', (event) => {
   const headers = new Headers()
 

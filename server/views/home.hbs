@@ -1,19 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible'>
-  <title>headHunter</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
-  <h1>headHunter</h1>
-</head>
+
 <body>
+  
+  <table>
+    What is your post-apocalyptic job?
+    <tr>
+        <td><img src="/public/images/cannibal.jpg"></td>
+        <td><img src="/public/images/roadwarrior.jpg"></td>
+        <td><img src="/public/images/vampire.jpg"></td>
+    </tr>
+    <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+        <td>Row 2, Cell 3</td>
+    </tr>
+  </table>
+  
+  <br>
+
+  <form class="form">
+  <input id="name" type="text">
+  <input type="submit">
+  </form>
+  
+  <select id="select" name="Choose a job">
+    <option value="">Accountant</option>
+    <option value="">Software Engineer</option>
+    <option value="">Toilet Cleaner</option>
+    <option value="">Teacher</option>
+    <option value="">Penguin Trainer</option>
+    <option value="">Call Center Employee</option>
+  </select>
+
   <ul>
   {{#each users}}
   <li>{{name}} ({{email}})</li>
   {{/each}}
-</ul>
+  </ul>
+
+<script type="text/javascript" src="/index.js">
+
+</script>
+
+
 </body>
 </html>
 
