@@ -2,26 +2,16 @@ const selectedRole = document.getElementsByClassName('selected')[0]
 const charactorName = document.getElementById('name').value
 
 const form = document.getElementsByClassName('form')[0]
-console.log('heheheheheehhe')
 form.addEventListener('submit', (event) => {
+  event.preventDefault()
+  console.log('Form Submitted')
+
   const headers = new Headers()
 
-  const body = {}
-
-  body.name = charactorName
-  body.role = selectedRole
+  const body = { name: charactorName, role: selectedRole }
 
   const jsonBody = JSON.stringify(body)
+  console.log('Should Fetch')
 
-  const requestSettings = {
-    method: 'POST',
-    headers: headers,
-    body: jsonBody,
-    mode: 'cors',
-    cache: 'default',
-  }
-
-  const request = new Request('invitation', requestSettings)
-
-  fetch(request)
+  window.location.href = `invitation/${jsonBody}`
 })

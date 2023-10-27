@@ -3,12 +3,12 @@ import * as db from '../db/db.js'
 
 const router = express.Router()
 
-router.get('/', async (req, res) => {
-  // const data = JSON.parse(req.body)
+router.get('/:json', async (req, res) => {
+  const data = JSON.parse(req.params.json)
 
-  // let jobAssignment = await db.getJobAssignment()
+  let jobAssignment = await db.getJobAssignment()
 
-  res.send('hello')
+  res.send(data)
 })
 
 export default router
