@@ -20,7 +20,7 @@ const __dirname = Path.dirname(__filename)
 server.engine('hbs', handlebars.engine({ extname: 'hbs' }))
 server.set('view engine', 'hbs')
 server.set('views', Path.join(__dirname, 'views'))
-server.use(express.urlencoded({ extended: true }))
+server.use(express.urlencoded({ extended: false }))
 
 // Routes
 server.use('/', homeRoute)
