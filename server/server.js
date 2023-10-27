@@ -9,6 +9,10 @@ import invitationRoute from './routes/invitation.js'
 
 const server = express()
 
+const publicFolder = Path.resolve('public')
+server.use(express.static(publicFolder))
+server.use(express.urlencoded({ extended: false }))
+
 const __filename = URL.fileURLToPath(import.meta.url)
 const __dirname = Path.dirname(__filename)
 
