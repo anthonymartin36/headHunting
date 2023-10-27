@@ -1,4 +1,3 @@
-import { getAllByRole } from '@testing-library/dom'
 import express from 'express'
 
 import * as db from '../db/db.js'
@@ -11,7 +10,12 @@ router.get('/', async (req, res) => {
 
   //Get all Job assignment from role table (a_id from a_job)
   // console.log(await db.getJobAssignment(1))
-  res.render('home')
+
+  const roles = await db.getAllRoles()
+
+  const viewData = { roles }
+
+  res.render('home', viewData)
 })
 
 export default router

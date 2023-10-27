@@ -3,12 +3,23 @@ import * as db from '../db/db.js'
 
 const router = express.Router()
 
-router.post('/', async (req, res) => {
-  const data = JSON.parse(req.body)
+router.get('/:json', async (req, res) => {
+  const data = JSON.parse(req.params.json)
 
-  //let jobAssignment = await db.getJobAssignment()
+  // let data = {
+  //   name: 'Anthony',
+  //   selectedRole: 'Role',
+  //   id: 1,
+  // }
 
-  res.send(data)
+  console.log(data)
+
+  let jobX = await db.getJobAssignment(data.id)
+
+  let viewData = { data, ...jobX[0] }
+
+  console.log(viewData)
+  res.render('invite', viewData)
 })
 
 export default router
